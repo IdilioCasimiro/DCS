@@ -1,0 +1,100 @@
+﻿@model IEnumerable<DataCenterSpecialist.Models.CaboEthernet>
+
+@{
+    ViewBag.Title = "Cabos Ethernet";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<p>
+    @Html.ActionLink("+ Adicionar", "Create")
+</p>
+
+<!--Criando um grid Layout-->
+<!--Coluna 1-->
+
+<div class="row">
+    <div class="col-sm-10">
+
+        <table class="table table-striped">
+            <tr class="success">
+                <th>
+                    @Html.ActionLink("ID do cabo", "Index", new { ordem = ViewBag.Ordem })
+                    @if (String.IsNullOrEmpty(ViewBag.Ordem))
+            {
+                        <span class="glyphicon glyphicon-chevron-down" style="font-size: 10px"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-chevron-up" style="font-size: 10px"></span>
+                    }
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RackA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EquipamentoA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PortaA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RackB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EquipamentoB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PortaB)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroCabo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RackA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EquipamentoA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PortaA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RackB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EquipamentoB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PortaB)
+                    </td>
+                    <td>
+                        <span style="font-size: 11px">
+                            @Html.ActionLink(" ", "Edit", new { id = item.CaboID }, new { @class = "text-info glyphicon glyphicon-pencil" })
+                        </span> |
+                        <span style="font-size: 11px">
+                            @Html.ActionLink(" ", "Delete", new { id = item.CaboID }, new { @class = "text-danger glyphicon glyphicon-remove" })
+                        </span>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div class="col-sm-2">
+        @Html.Partial("Filtrar", Model)
+    </div>
+</div>

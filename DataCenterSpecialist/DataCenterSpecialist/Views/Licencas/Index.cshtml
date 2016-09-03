@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DataCenterSpecialist.Models.Licenca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipamento.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FabricanteLicenca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FornecedorLicenca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeLicenca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInicioCobertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFimCobertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preço)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipamento.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FabricanteLicenca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FornecedorLicenca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeLicenca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInicioCobertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFimCobertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preço)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LicencaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LicencaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LicencaID })
+        </td>
+    </tr>
+}
+
+</table>

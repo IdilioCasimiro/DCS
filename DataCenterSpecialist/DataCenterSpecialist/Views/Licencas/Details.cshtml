@@ -1,0 +1,74 @@
+﻿@model DataCenterSpecialist.Models.Licenca
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Licenca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipamento.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipamento.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FabricanteLicenca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FabricanteLicenca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FornecedorLicenca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FornecedorLicenca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeLicenca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeLicenca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicioCobertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicioCobertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFimCobertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFimCobertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preço)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preço)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LicencaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

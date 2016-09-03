@@ -1,0 +1,58 @@
+﻿@model DataCenterSpecialist.Models.Dominio.Equipamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fabricante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEquipamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEquipamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localizacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataArquisicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataArquisicao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EquipamentoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

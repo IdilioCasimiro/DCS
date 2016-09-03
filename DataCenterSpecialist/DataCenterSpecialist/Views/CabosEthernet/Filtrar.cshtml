@@ -1,0 +1,70 @@
+﻿
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-success" style="font-size: 10px">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span style="font-size: 14px">Procurar <span class="glyphicon glyphicon-search" style="font-size: 10px"></span></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group">
+                        @Html.TextBox("numero", null, new { @class = "form-control", @placeholder = "ID do cabo" })<br />
+                        
+                        <input type="submit" class="btn btn-success btn-block" value="Procurar" />
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-success">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span style="font-size: 14px">Filtrar <span class="glyphicon glyphicon-filter" style="font-size: 10px"></span></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    <input type="text" class="form-control" placeholder="Rack A" name="rackA" id="rackA" /> <br />
+                    <input type="text" class="form-control" placeholder="Equipamento A" name="equipamentoA" id="equipamentoA" /> <br />
+                    <input type="text" class="form-control" placeholder="Rack B" name="rackB" id="rackB" /> <br />
+                    <input type="text" class="form-control" placeholder="Equipamento B" name="equipamentoB" id="equipamentoB" /> <br />
+                    <input type="submit" class="btn btn-success btn-block" value="Filtrar" />    
+                }
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-success">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span style="font-size: 14px">Ver <span class="glyphicon glyphicon-eye-open" style="font-size: 10px"></span></span>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <ul class="list-group list-unstyled">
+                    <li>@Html.ActionLink("Cabos De Energia", "Index", "CabosEnergia")</li>
+                    <li>@Html.ActionLink("Fibra Óptica", "Index", "FibrasOpticas")</li>
+                    <li>@Html.ActionLink("Smartnets", "Index", "Smartnets")</li>
+                    <li>@Html.ActionLink("Licenças", "Index", "Licencas")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

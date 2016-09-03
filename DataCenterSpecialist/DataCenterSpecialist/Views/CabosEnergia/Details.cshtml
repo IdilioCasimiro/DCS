@@ -1,0 +1,66 @@
+﻿@model DataCenterSpecialist.Models.Dominio.CaboEnergia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CaboEnergia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCaboEnergia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCaboEnergia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fonte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PDU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PDU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Posicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Posicao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CaboEnergiaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

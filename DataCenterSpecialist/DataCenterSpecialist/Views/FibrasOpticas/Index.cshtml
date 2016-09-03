@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DataCenterSpecialist.Models.FibraOptica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCabo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RackA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquipamentoA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortaA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RackB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EquipamentoB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PortaB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroCabo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RackA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipamentoA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortaA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RackB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EquipamentoB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PortaB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CaboID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CaboID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CaboID })
+        </td>
+    </tr>
+}
+
+</table>

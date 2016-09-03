@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataCenterSpecialist.Models.Dominio.Equipamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr class="danger">
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeEquipamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Localizacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataArquisicao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fabricante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeEquipamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Localizacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataArquisicao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EquipamentoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EquipamentoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EquipamentoID })
+        </td>
+    </tr>
+}
+
+</table>

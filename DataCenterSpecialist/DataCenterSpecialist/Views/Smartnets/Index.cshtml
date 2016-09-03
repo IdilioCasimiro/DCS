@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DataCenterSpecialist.Models.Dominio.Smartnet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr style="background-color: khaki">
+        <th>
+            @Html.DisplayNameFor(model => model.Equipamento.NomeEquipamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fornecedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInicioCobertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFimCobertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipamento.NomeEquipamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fornecedor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInicioCobertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFimCobertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id=item.SmartnetID }, new { @class = "text-info glyphicon glyphicon-pencil" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.SmartnetID }, new { @class = "text-success glyphicon glyphicon-eye-open" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.SmartnetID }, new { @class = "text-danger glyphicon glyphicon-remove" })
+        </td>
+    </tr>
+}
+
+</table>

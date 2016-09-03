@@ -1,0 +1,72 @@
+﻿@model DataCenterSpecialist.Models.Dominio.CaboEnergia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CaboEnergia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCaboEnergia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCaboEnergia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fonte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PDU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PDU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Posicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Posicao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
